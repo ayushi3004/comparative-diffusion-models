@@ -1,6 +1,6 @@
-# comparative-diffusion-models
+<h1>comparative-diffusion-models<h1>
 
-##Project goal
+<h2>Project goal</h2>
 This project aims to implement and contrast diffusion models with other generative models like GANs.
 
 Diffusion models are a new class of state-of-the-art generative models that generate 
@@ -16,7 +16,7 @@ DALL-E 2, Imagen, DreamFusion, etc. They are slowly gaining traction, however th
 We aim to simulate these limitations as well as explore enhancements to correct these.
 
 
-##Repository structure
+<h2>Repository structure</h2>
 1. ``requirements.txt``: This spells out the libraries required to run the project. They can be installed as follows:
 
     ``pip install -r requirements.txt``
@@ -77,13 +77,14 @@ Sampling:
     tmux new-session -d -s my_session_2 \; send-keys "python3 -u denoising-diffusion-gan/test_ddgan.py --dataset cifar10 --exp ddgan_cifar10_exp1 --num_channels 3 --num_channels_dae 128 --num_timesteps 4 --num_res_blocks 2 --nz 100 --z_emb_dim 256 --n_mlp 4 --ch_mult 1 2 2 2 --epoch_id 50 --compute_fid --real_img_dir denoising-diffusion-gan/data/cifar-10-batches-py/ > denoising-diffusion-gan/out/test_ddgan_cifar50.log" Enter
 
 <br></br>
-##Results
+<h2>Results</h2>
 
 <h3>GANs:</h3>
 
    Log files and results in: gans/out/
 
    Loss vs Iterations:
+
    ![Loss vs Iterations](gans/out/loss.png "Loss vs Iterations")
 
    Sampling results:
@@ -99,6 +100,7 @@ Sampling:
    Log files and results in: denoising-diffusion-gan/out
 
    Loss vs Iterations:
+
    ![Loss vs Iterations](denoising-diffusion-gan/out/loss.png "Loss vs Iterations")
 
    Sampling results:
