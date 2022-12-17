@@ -19,14 +19,14 @@ We aim to simulate these limitations as well as explore enhancements to correct 
 <h2>Repository structure</h2>
 1. requirements.txt: This spells out the libraries required to run the project. They can be installed as follows:
    
-   pip install -r requirements.txt
+   `pip install -r requirements.txt`
 
 <br></br>
 2. Training and sampling scripts: We have tried out different approaches which can be run as separate Python files:
 <br>
     <h3>GANs:</h3>
 
-    GANs are a famous class of generative models but they have some drawbacks:
+   GANs are a famous class of generative models but they have some drawbacks:
    1. Training instability. 
    2. Mode collapse. 
    3. One-shot learning issue for complex data. 
