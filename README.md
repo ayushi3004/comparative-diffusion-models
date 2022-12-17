@@ -32,7 +32,7 @@ We aim to simulate these limitations as well as explore enhancements to correct 
    3. One-shot learning issue for complex data. 
    4. Overfitting.
 
-    We built GANs from scratch based on the [Pytorch tutorial](https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html) mimicking the architecture mentioned in 
+   We built GANs from scratch based on the [Pytorch tutorial](https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html) mimicking the architecture mentioned in 
 [DCGAN](https://arxiv.org/abs/1511.06434) paper. We train the model on CIFAR-10 dataset and then 
 sample 50k images. Hyperparams are consistent with other experiments and have been hard-coded as follows:
     
