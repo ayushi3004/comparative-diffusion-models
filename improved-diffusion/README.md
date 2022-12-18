@@ -1,3 +1,7 @@
+Derived from https://github.com/openai/improved-diffusion
+
+This adds timing for training and sampling to the `image_train` and `image_sample` scripts. It also adds a simple `npztodir.py` script to convert a generated `npz` file to a directory of images, and a `flags.sh` file to easily configure the training and sampling flags.
+
 # improved-diffusion
 
 This is the codebase for [Improved Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2102.09672).
