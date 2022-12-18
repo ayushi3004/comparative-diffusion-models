@@ -21,6 +21,7 @@ We aim to simulate these limitations as well as explore enhancements to correct 
    
    `pip install -r requirements.txt`
 
+You will also need a working MPI implementation installed for the diffusion code to run.
 <br></br>
 2. Training and sampling scripts: We have tried out different approaches which can be run as separate Python files:
 <br>
@@ -52,8 +53,24 @@ sample 50k images. Hyperparams are consistent with other experiments and have be
         python -u gans/cifar_gan.py > gans/out/train_test.log
 <br>
     <h3>Classical diffusion models:</h3>
+Next, we train a classical diffusion model using the code in the `improved-diffusion` library.
+First, navigate into the `improved-diffusion/improved_diffusion` directory and run `pip install -e .` to install the improved_diffusion library as a package. 
 
+Now, you can run the scripts in the `improved-diffusion/scripts` folder to train and sample diffusion models. These scripts are based on https://github.com/openai/improved-diffusion and their usage is as such.
 
+We provide a `flags.sh` file to set up the training, model, and diffusion flags as we set them. You can use this before running the train/sample scripts by running `source flags.sh`. You will also need to run `export OPENAI_LOGDIR="some/output/directory/"` to capture the train/sample output to a specific location. To produce examples similar to ours, run the following:
+
+1. `source improved-diffusion/flags.sh`
+2. `export OPENAI_LOGDIR="path/to/outputdir"`
+3. `python improved-diffusion/datasets/cifar10.py`
+4. `python improved-diffusion/scripts/image_train.py $MODEL_FLAGS $DIFFUSION_FLAGS $TRAIN_FLAGS`
+5. (let this run to generate a number of models)
+6. `python improved-diffusion/scripts/image_sample.py $DIFFUSION_FLAGS $MODEL_FLAGS --num_samples 1024 --model_path path/to/model.pt`
+7. `python improved-diffusion/scripts/npztodir.py /path/to/generated-images.npz /diffusion-images`
+8. Download cifar-10 statistics from http://bioinf.jku.at/research/ttur/ttur_stats/fid_stats_cifar10_train.npz
+8. `python -m pytorch_fid fid_stats_cifar10_train.npz /diffusion-images`
+
+Training will take a substantial amount of time (usually over 12 hours with one GPU) to reach 10,000 iterations. 
 <br>
     <h3>DDGAN (with improvements):</h3>
     Next we tried NVIDIA's Denoising Diffusion GANs which is supposed to be an enhancement over the
@@ -75,7 +92,7 @@ Training:
 Sampling:
     
     tmux new-session -d -s my_session_2 \; send-keys "python3 -u denoising-diffusion-gan/test_ddgan.py --dataset cifar10 --exp ddgan_cifar10_exp1 --num_channels 3 --num_channels_dae 128 --num_timesteps 4 --num_res_blocks 2 --nz 100 --z_emb_dim 256 --n_mlp 4 --ch_mult 1 2 2 2 --epoch_id 50 --compute_fid --real_img_dir denoising-diffusion-gan/data/cifar-10-batches-py/ > denoising-diffusion-gan/out/test_ddgan_cifar50.log" Enter
-
+ 
 <br></br>
 <h2>Results</h2>
 
@@ -95,6 +112,13 @@ Sampling:
 <br></br>
 <h3>Classical diffusion models (with enhancements):</h3>
 
+Sampling time for 1024 images: ~82 minutes.
+
+Loss per iteration:   
+![Loss per iteration](improved-diffusion/out/loss-curve.png)
+
+Generated images after 2500 timesteps:   
+![2500 Iteration images](improved-diffusion/out/generated-images.png)
 
 <br></br>
 <h3>DDGANs (with enhancements):</h3>
