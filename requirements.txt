@@ -8,3 +8,4 @@ lmdb
 matplotlib
 scipy
 ninja
+mpi4py
