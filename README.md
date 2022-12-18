@@ -80,6 +80,7 @@ Sampling:
 <h2>Results</h2>
 
 <h3>GANs:</h3>
+   Sampling time for 50k images: 2175s
 
    Log files and results in: gans/out/
 
@@ -97,6 +98,8 @@ Sampling:
 
 <br></br>
 <h3>DDGANs (with enhancements):</h3>
+   Sampling time for 50k images: 332.65s
+
    Log files and results in: denoising-diffusion-gan/out
 
    Loss vs Iterations:
