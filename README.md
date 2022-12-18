@@ -51,7 +51,7 @@ sample 50k images. Hyperparams are consistent with other experiments and have be
 
         python -u gans/cifar_gan.py > gans/out/train_test.log
 <br>
-    <h3>Classic diffusion models:</h3>
+    <h3>Classical diffusion models:</h3>
 
 
 <br>

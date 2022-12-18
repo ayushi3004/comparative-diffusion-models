@@ -1,0 +1,100 @@
+Files already downloaded and verified
+Generator(
+  (main): Sequential(
+    (0): ConvTranspose2d(100, 512, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): ConvTranspose2d(512, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (7): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): ReLU(inplace=True)
+    (9): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (10): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (11): ReLU(inplace=True)
+    (12): ConvTranspose2d(64, 3, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (13): Tanh()
+  )
+)
+Discriminator(
+  (main): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+    (2): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): LeakyReLU(negative_slope=0.2, inplace=True)
+    (5): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (6): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (7): LeakyReLU(negative_slope=0.2, inplace=True)
+    (8): Conv2d(256, 512, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), bias=False)
+    (12): Sigmoid()
+  )
+)
+Generator Parameters: 3576704
+Discriminator Parameters: 2765568
+Starting Training Loop...
+Epoch 0 took 38.89335322380066
+Epoch 1 took 38.772387742996216
+Epoch 2 took 38.803694009780884
+Epoch 3 took 38.844451665878296
+Epoch 4 took 38.81293225288391
+[5/50]	Loss_D: 1.0561	Loss_G: 1.2949	Fretchet_Distance: 148.7188
+Epoch 5 took 38.85514497756958
+Epoch 6 took 38.85249733924866
+Epoch 7 took 38.89112448692322
+Epoch 8 took 38.949299335479736
+Epoch 9 took 38.96425461769104
+[10/50]	Loss_D: 1.3054	Loss_G: 0.9828	Fretchet_Distance: 117.3534
+Epoch 10 took 38.983381271362305
+Epoch 11 took 38.98588418960571
+Epoch 12 took 38.97594356536865
+Epoch 13 took 39.018105268478394
+Epoch 14 took 38.977914810180664
+[15/50]	Loss_D: 1.2359	Loss_G: 1.1298	Fretchet_Distance: 125.2761
+Epoch 15 took 39.01015377044678
+Epoch 16 took 38.98677086830139
+Epoch 17 took 38.99636197090149
+Epoch 18 took 38.93204951286316
+Epoch 19 took 38.97392416000366
+[20/50]	Loss_D: 1.1895	Loss_G: 1.0788	Fretchet_Distance: 114.0584
+Epoch 20 took 39.00913381576538
+Epoch 21 took 38.99131393432617
+Epoch 22 took 38.95384931564331
+Epoch 23 took 38.994558572769165
+Epoch 24 took 38.99009823799133
+[25/50]	Loss_D: 1.1905	Loss_G: 1.0205	Fretchet_Distance: 117.6715
+Epoch 25 took 39.00537157058716
+Epoch 26 took 39.00037360191345
+Epoch 27 took 38.96537399291992
+Epoch 28 took 39.02463984489441
+Epoch 29 took 39.054598808288574
+[30/50]	Loss_D: 1.2096	Loss_G: 1.1414	Fretchet_Distance: 121.0356
+Epoch 30 took 39.03063893318176
+Epoch 31 took 39.05919432640076
+Epoch 32 took 39.01279330253601
+Epoch 33 took 39.05357003211975
+Epoch 34 took 39.06417179107666
+[35/50]	Loss_D: 1.1864	Loss_G: 0.9444	Fretchet_Distance: 107.3674
+Epoch 35 took 39.05314803123474
+Epoch 36 took 39.040576457977295
+Epoch 37 took 39.023555755615234
+Epoch 38 took 39.07428765296936
+Epoch 39 took 39.066612005233765
+[40/50]	Loss_D: 1.0981	Loss_G: 1.1844	Fretchet_Distance: 115.7698
+Epoch 40 took 39.052897453308105
+Epoch 41 took 39.04110646247864
+Epoch 42 took 39.04158115386963
+Epoch 43 took 39.083855628967285
+Epoch 44 took 39.02664017677307
+[45/50]	Loss_D: 1.0399	Loss_G: 1.1541	Fretchet_Distance: 115.1951
+Epoch 45 took 39.02324891090393
+Epoch 46 took 39.0376615524292
+Epoch 47 took 39.04438400268555
+Epoch 48 took 39.03004837036133
+Epoch 49 took 39.103010416030884
+[50/50]	Loss_D: 1.0215	Loss_G: 1.3164	Fretchet_Distance: 118.1295
+Total time taken: 2175.4930193424225
